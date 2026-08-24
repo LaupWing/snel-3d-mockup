@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/paragraph",
+  "version": "1.0.0",
+  "title": "Snel Paragraph",
+  "category": "snel",
+  "icon": "editor-paragraph",
+  "description": "Brand paragraph — inline editable, Size option, Muted format. Colour adapts to the section background.",
+  "keywords": [
+    "paragraph",
+    "text",
+    "lead"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".snel-text",
+      "default": ""
+    },
+    "size": {
+      "type": "string",
+      "default": "md"
+    },
+    "align": {
+      "type": "string",
+      "default": "left"
+    },
+    "leading": {
+      "type": "string",
+      "default": "normal"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/content",
+  "version": "1.0.0",
+  "title": "Snel Content",
+  "category": "snel",
+  "icon": "editor-alignleft",
+  "description": "Prose wrapper — drop native WP blocks inside and get clean typography styling automatically.",
+  "keywords": [
+    "prose",
+    "content",
+    "typography",
+    "text"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "bg": {
+      "type": "string",
+      "default": "white"
+    },
+    "size": {
+      "type": "string",
+      "default": "base"
+    },
+    "paddingSize": {
+      "type": "string",
+      "default": "md"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

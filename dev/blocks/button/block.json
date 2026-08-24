@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/button",
+  "version": "1.0.0",
+  "title": "Snel Button",
+  "category": "snel",
+  "icon": "button",
+  "description": "Simple brand button — swap between outline and filled. Extracted from the hero.",
+  "keywords": [
+    "button",
+    "cta",
+    "outline",
+    "filled"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Bekijk ons werk"
+    },
+    "url": {
+      "type": "string",
+      "default": "#"
+    },
+    "variant": {
+      "type": "string",
+      "default": "outline"
+    }
+  }
+}

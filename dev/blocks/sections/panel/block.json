@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/panel",
+  "version": "1.0.1",
+  "title": "Snel Panel",
+  "category": "snel",
+  "icon": "editor-table",
+  "description": "Framed content container with animated brand corner marks. Holds an eyebrow, heading and lead paragraph (locked 3-row layout). The shell is shared with the footer via snel_panel_open()/close().",
+  "keywords": [
+    "panel",
+    "container",
+    "frame",
+    "section",
+    "kracht"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "theme": {
+      "type": "string",
+      "default": "white"
+    },
+    "rounded": {
+      "type": "boolean",
+      "default": false
+    },
+    "justify": {
+      "type": "string",
+      "default": "start"
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "none"
+    },
+    "size": {
+      "type": "string",
+      "default": "md"
+    },
+    "showBeams": {
+      "type": "boolean",
+      "default": true
+    },
+    "showGradient": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

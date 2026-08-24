@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/features",
+  "version": "1.0.0",
+  "title": "Snel Features",
+  "category": "snel",
+  "icon": "grid-view",
+  "description": "Responsive features grid. Cards stored as data — no child blocks needed.",
+  "keywords": [
+    "features",
+    "grid",
+    "cards",
+    "benefits"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "bg": {
+      "type": "string",
+      "default": "canvas"
+    },
+    "size": {
+      "type": "string",
+      "default": "sm"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "icon": "eye",
+          "heading": "Zichtbaar online",
+          "body": "Vergroot je bereik en scoor beter in zoekmachines dankzij slimme contentstructuur en technische optimalisatie."
+        },
+        {
+          "icon": "users",
+          "heading": "Versterkt vertrouwen",
+          "body": "Professioneel design, duidelijke interactie en een herkenbare uitstraling zorgen voor een betrouwbare eerste indruk."
+        },
+        {
+          "icon": "chart-bar",
+          "heading": "Meer conversie",
+          "body": "Slimme flows en gerichte call-to-actions zetten bezoekers om in klanten of leads."
+        },
+        {
+          "icon": "wrench",
+          "heading": "Eenvoudig beheer",
+          "body": "Volledige controle zonder gedoe. Met een gebruiksvriendelijk CMS pas je je website eenvoudig zelf aan."
+        },
+        {
+          "icon": "bolt",
+          "heading": "Altijd snel",
+          "body": "Soepele prestaties, korte laadtijden en responsive design zorgen voor een prettige ervaring."
+        },
+        {
+          "icon": "trending",
+          "heading": "Klaar voor groei",
+          "body": "Veilig, schaalbaar en flexibel ingericht voor je toekomstplannen."
+        }
+      ]
+    }
+  }
+}

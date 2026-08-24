@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/posts",
+  "title": "Snel Posts",
+  "category": "snel",
+  "description": "Horizontal scroll carousel of recent blog posts.",
+  "supports": {
+    "html": false,
+    "align": false
+  },
+  "attributes": {
+    "bg": {
+      "type": "string",
+      "default": "light"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Onze laatste inzichten"
+    },
+    "intro": {
+      "type": "string",
+      "default": ""
+    },
+    "count": {
+      "type": "number",
+      "default": 6
+    },
+    "size": {
+      "type": "string",
+      "default": "sm"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "viewScript": "file:./view.js",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "textdomain": "snel"
+}

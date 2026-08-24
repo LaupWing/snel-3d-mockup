@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/partners",
+  "version": "1.0.0",
+  "title": "Snel Partners",
+  "category": "snel",
+  "icon": "groups",
+  "description": "Auto-scrolling marquee of partner logos (from the Partners post type).",
+  "keywords": [
+    "partners",
+    "logos",
+    "marquee",
+    "clients"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "bg": {
+      "type": "string",
+      "default": "white"
+    },
+    "animated": {
+      "type": "boolean",
+      "default": true
+    },
+    "count": {
+      "type": "number",
+      "default": 0
+    },
+    "size": {
+      "type": "string",
+      "default": "sm"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/cases",
+  "title": "Snel Cases",
+  "category": "snel",
+  "description": "2×2 grid of case study cards pulled from the Cases CPT.",
+  "supports": {
+    "html": false,
+    "align": false
+  },
+  "attributes": {
+    "bg": {
+      "type": "string",
+      "default": "dark"
+    },
+    "showAll": {
+      "type": "boolean",
+      "default": false
+    },
+    "size": {
+      "type": "string",
+      "default": "md"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "viewScript": "file:./view.js",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "textdomain": "snel"
+}

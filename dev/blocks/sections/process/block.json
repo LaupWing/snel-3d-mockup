@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/process",
+  "version": "1.0.0",
+  "title": "Snel Process",
+  "category": "snel",
+  "icon": "networking",
+  "description": "Scroll-driven chip chain — editable steps with title, card heading, body and CTA button.",
+  "keywords": [
+    "process",
+    "flow",
+    "steps",
+    "timeline",
+    "scroll"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "theme": {
+      "type": "string",
+      "default": "dark"
+    },
+    "size": {
+      "type": "string",
+      "default": "sm"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    },
+    "steps": {
+      "type": "array",
+      "default": [
+        {
+          "n": "01",
+          "title": "Data-extractie",
+          "heading": "Alles gestructureerd",
+          "body": "We verzamelen en structureren je data uit alle bronnen, klaar voor verwerking.",
+          "btn_label": "Meer info",
+          "btn_url": "#"
+        },
+        {
+          "n": "02",
+          "title": "n8n automatisering",
+          "heading": "Werk op de automaat",
+          "body": "Workflows koppelen je tools aan elkaar zodat repetitief werk vanzelf gebeurt.",
+          "btn_label": "Meer info",
+          "btn_url": "#"
+        },
+        {
+          "n": "03",
+          "title": "AI-verwerking",
+          "heading": "Slimme beslissingen",
+          "body": "AI-modellen verrijken, classificeren en beslissen op basis van je data.",
+          "btn_label": "Meer info",
+          "btn_url": "#"
+        },
+        {
+          "n": "04",
+          "title": "Software bouwen",
+          "heading": "Maatwerk dat past",
+          "body": "We bouwen de maatwerk-software die het hele proces aan elkaar knoopt.",
+          "btn_label": "Meer info",
+          "btn_url": "#"
+        }
+      ]
+    }
+  }
+}

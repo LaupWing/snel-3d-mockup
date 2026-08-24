@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/category-nav",
+  "version": "1.0.0",
+  "title": "Category Nav",
+  "category": "snel",
+  "icon": "category",
+  "description": "Scrollable category filter nav — links to category archives. Active state auto-detected on category pages.",
+  "keywords": [
+    "category",
+    "filter",
+    "nav",
+    "blog"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "allLabel": {
+      "type": "string",
+      "default": "Alle"
+    }
+  }
+}

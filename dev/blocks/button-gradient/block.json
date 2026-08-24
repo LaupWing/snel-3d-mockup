@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/button-gradient",
+  "version": "1.0.0",
+  "title": "Snel Button (Gradient)",
+  "category": "snel",
+  "icon": "button",
+  "description": "Brand-gradient pill button with the slide-up arrow. Wraps template-parts/gradient-button.",
+  "keywords": [
+    "button",
+    "cta",
+    "gradient",
+    "primary"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Start je project"
+    },
+    "url": {
+      "type": "string",
+      "default": "#"
+    },
+    "showArrow": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

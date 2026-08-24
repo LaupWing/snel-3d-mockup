@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/posts-archive",
+  "version": "1.0.0",
+  "title": "Snel Posts Archive",
+  "category": "snel",
+  "icon": "grid-view",
+  "description": "Paginated grid of blog posts — use on the blog/category page.",
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "bg": {
+      "type": "string",
+      "default": "white"
+    },
+    "perPage": {
+      "type": "number",
+      "default": 9
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/badge-text",
+  "version": "1.0.1",
+  "title": "Snel Badge",
+  "category": "snel",
+  "icon": "tag",
+  "description": "Text badge pill. Colour and weight adapt to the section background (light/dark).",
+  "keywords": [
+    "badge",
+    "pill",
+    "label",
+    "eyebrow"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Onze kracht"
+    },
+    "color": {
+      "type": "string",
+      "default": "violet"
+    },
+    "useCategory": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "usesContext": [
+    "postId"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/heading",
+  "version": "1.0.0",
+  "title": "Snel Heading",
+  "category": "snel",
+  "icon": "heading",
+  "description": "Brand heading — pick a level (H1–H4), type inline, mark text Muted. Self-contained styling; no core-heading fighting.",
+  "keywords": [
+    "heading",
+    "title"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".snel-heading",
+      "default": ""
+    },
+    "level": {
+      "type": "string",
+      "default": "h2"
+    },
+    "size": {
+      "type": "string",
+      "default": "auto"
+    },
+    "weight": {
+      "type": "string",
+      "default": "regular"
+    },
+    "align": {
+      "type": "string",
+      "default": "left"
+    },
+    "gradient": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

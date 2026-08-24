@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/thumbnail",
+  "title": "Snel Thumbnail",
+  "category": "snel",
+  "description": "Full-width featured image with breadcrumb overlay and meta info cards at the bottom.",
+  "supports": {
+    "html": false,
+    "align": false
+  },
+  "attributes": {
+    "bg": {
+      "type": "string",
+      "default": "white"
+    },
+    "label1": {
+      "type": "string",
+      "default": ""
+    },
+    "value1": {
+      "type": "string",
+      "default": ""
+    },
+    "label2": {
+      "type": "string",
+      "default": ""
+    },
+    "value2": {
+      "type": "string",
+      "default": ""
+    },
+    "label3": {
+      "type": "string",
+      "default": ""
+    },
+    "value3": {
+      "type": "string",
+      "default": ""
+    },
+    "backUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "backLabel": {
+      "type": "string",
+      "default": "Terug"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "textdomain": "snel"
+}

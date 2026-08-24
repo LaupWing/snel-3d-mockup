@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/statement",
+  "version": "1.0.0",
+  "title": "Snel Statement",
+  "category": "snel",
+  "icon": "editor-paragraph",
+  "description": "Two-column statement — large heading left, word-reveal paragraph right. Words cascade in/out on scroll.",
+  "keywords": [
+    "statement",
+    "text",
+    "reveal",
+    "animation",
+    "paragraph"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "paragraph": {
+      "type": "string",
+      "default": ""
+    },
+    "level": {
+      "type": "string",
+      "default": "h3"
+    },
+    "bg": {
+      "type": "string",
+      "default": "dark"
+    },
+    "size": {
+      "type": "string",
+      "default": "lg"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

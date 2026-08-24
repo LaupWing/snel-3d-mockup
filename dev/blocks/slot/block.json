@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/slot",
+  "version": "1.0.0",
+  "title": "Snel Slot",
+  "category": "snel",
+  "icon": "align-center",
+  "description": "Internal layout slot with a max-block cap. Used inside Hero 2.",
+  "keywords": [
+    "slot"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "supports": {
+    "inserter": false,
+    "html": false
+  },
+  "attributes": {
+    "max": {
+      "type": "number",
+      "default": 0
+    },
+    "orientation": {
+      "type": "string",
+      "default": "vertical"
+    },
+    "justify": {
+      "type": "string",
+      "default": "left"
+    }
+  }
+}

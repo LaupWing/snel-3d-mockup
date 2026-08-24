@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/service",
+  "version": "1.0.0",
+  "title": "Snel Service",
+  "category": "snel",
+  "icon": "hammer",
+  "description": "Displays a service from the Service CPT.",
+  "keywords": [
+    "service",
+    "dienst",
+    "card"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  }
+}

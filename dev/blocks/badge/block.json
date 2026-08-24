@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/badge",
+  "version": "1.0.0",
+  "title": "Snel Review Badge",
+  "category": "snel",
+  "icon": "star-filled",
+  "description": "Review badge — Google logo, score and stars. Extracted from the hero.",
+  "keywords": [
+    "badge",
+    "review",
+    "google",
+    "stars",
+    "score"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "score": {
+      "type": "string",
+      "default": "4.9"
+    },
+    "reviewCount": {
+      "type": "string",
+      "default": "74"
+    },
+    "countLabel": {
+      "type": "string",
+      "default": "op basis van 74 reviews"
+    }
+  }
+}

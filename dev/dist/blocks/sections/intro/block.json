@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/intro",
+  "version": "1.0.1",
+  "title": "Snel Intro",
+  "category": "snel",
+  "icon": "cover-image",
+  "description": "Single-page intro header — same layout as hero (beams + stack corners, 3 slots) but scoped to individual pages.",
+  "keywords": [
+    "intro",
+    "hero",
+    "page",
+    "header",
+    "slots"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "justify": {
+      "type": "string",
+      "default": "start"
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "none"
+    },
+    "fullHeight": {
+      "type": "boolean",
+      "default": false
+    },
+    "visual": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageRatio": {
+      "type": "string",
+      "default": "original"
+    },
+    "theme": {
+      "type": "string",
+      "default": "white"
+    },
+    "showBeams": {
+      "type": "boolean",
+      "default": true
+    },
+    "showGradient": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

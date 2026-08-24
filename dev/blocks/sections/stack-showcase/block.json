@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/stack-showcase",
+  "version": "1.0.0",
+  "title": "Stack Showcase",
+  "category": "snel",
+  "icon": "images-alt2",
+  "description": "3D stacked plates (three.js) with a hover-to-explore card. Sits below the hero.",
+  "keywords": [
+    "stack",
+    "3d",
+    "three",
+    "showcase",
+    "hover"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    },
+    "bg": {
+      "type": "string",
+      "default": "white"
+    },
+    "size": {
+      "type": "string",
+      "default": "md"
+    },
+    "disableTop": {
+      "type": "boolean",
+      "default": false
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    },
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Data Extractie",
+          "dot": "#38bdf8",
+          "text": "Wij halen gestructureerde data op uit websites, documenten en systemen. Schoon, geordend en klaar om te gebruiken.",
+          "cta": "Meer over data",
+          "url": "#"
+        },
+        {
+          "title": "n8n Automatisering",
+          "dot": "#a78bfa",
+          "text": "Processen die je tijd kosten draaien voortaan vanzelf. Van leadopvolging tot rapportage, met n8n als motor.",
+          "cta": "Bekijk automatisering",
+          "url": "#"
+        },
+        {
+          "title": "Custom Software",
+          "dot": "#f472b6",
+          "text": "Dashboards, portals en tools op maat. Gebouwd precies zoals jij het nodig hebt, niet zoals de markt het aanbiedt.",
+          "cta": "Bekijk software",
+          "url": "#"
+        }
+      ]
+    }
+  }
+}

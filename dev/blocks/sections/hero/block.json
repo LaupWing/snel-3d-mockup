@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "snel/hero",
+  "version": "1.0.1",
+  "title": "Snel Hero",
+  "category": "snel",
+  "icon": "cover-image",
+  "description": "Framed hero (beams + stack corners) with 3 slots: eyebrow, middle, lower. Fill each slot with Snel blocks.",
+  "keywords": [
+    "hero",
+    "section",
+    "slots",
+    "frame"
+  ],
+  "textdomain": "snel",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ]
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "justify": {
+      "type": "string",
+      "default": "start"
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "none"
+    },
+    "fullHeight": {
+      "type": "boolean",
+      "default": false
+    },
+    "size": {
+      "type": "string",
+      "default": "lg"
+    },
+    "disableBottom": {
+      "type": "boolean",
+      "default": false
+    },
+    "showBeams": {
+      "type": "boolean",
+      "default": true
+    },
+    "showGradient": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

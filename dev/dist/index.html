@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mockup test</title>
+<style>html,body{margin:0;height:100%;background:#0e0e11}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+var base = '/wp-content/plugins/snel-3d-mockup/src/assets';
+window.snelMockup = {
+	models: [
+		{ id: 'imac',              label: 'iMac',              url: base + '/models/imac.glb' },
+		{ id: 'macbook-pro-m3',    label: 'MacBook Pro 16"',   url: base + '/models/macbook-pro-m3.glb' },
+		{ id: 'iphone-13-pro-max', label: 'iPhone 13 Pro Max', url: base + '/models/iphone-13-pro-max.glb' }
+	],
+	tableUrl: base + '/models/noguchi_coffee_table.glb',
+	hdris: [ { label: 'Studio', url: base + '/hdri/studio.hdr' } ],
+	imageUrl: '/wp-content/uploads/2026/06/stopabbo-1.png'
+};
+</script>
+<script src="./entry.js"></script>
+</body>
+</html>
