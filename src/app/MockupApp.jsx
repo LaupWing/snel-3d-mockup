@@ -190,7 +190,10 @@ function Studio( { onClose } ) {
 		setPanel( ( prev ) => ( { ...DEFAULT_PANEL, ...p.panel, glbUrl: p.panel?.glbUrl || prev.glbUrl } ) );
 		setStudio( { ...DEFAULT_STUDIO, ...( p.studio || {} ) } );
 		cameraApiRef.current?.set( p.camera );
-		saveConfig( { ...p, preset: name } ).catch( () => {} );
+		// Presets van vóór de camera-update hebben geen camera — bewaar dan de
+		// huidige orbit in de laatste-state, anders is die bij heropenen weg.
+		const cam = p.camera ?? cameraApiRef.current?.get() ?? null;
+		saveConfig( { ...p, camera: cam, preset: name } ).catch( () => {} );
 	}, [ presets, setStudio ] );
 
 	// Reset = revert LIVE state to defaults only (keeps the chosen device/HDRI).

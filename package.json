@@ -1,6 +1,6 @@
 {
   "name": "snel-3d-mockup",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "build": "wp-scripts build src/index.js --output-path=build",
