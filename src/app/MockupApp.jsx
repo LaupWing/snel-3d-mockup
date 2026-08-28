@@ -48,7 +48,10 @@ function Studio( { onClose } ) {
 	const [ presetUrl, setPresetUrl ] = useState( '' );
 	const [ saving, setSaving ] = useState( false );
 	const [ presets, setPresets ] = useState( SAVED_PRESETS );
-	const [ activePreset, setActivePreset ] = useState( '' );
+	// Reopen with the last used preset selected (if it still exists).
+	const [ activePreset, setActivePreset ] = useState(
+		SAVED_CONFIG?.preset && SAVED_PRESETS[ SAVED_CONFIG.preset ] ? SAVED_CONFIG.preset : ''
+	);
 	const [ resetKey, setResetKey ] = useState( 0 );
 	const [ exporting, setExporting ] = useState( false );
 	const [ showExport, setShowExport ] = useState( false );
@@ -160,7 +163,7 @@ function Studio( { onClose } ) {
 			const r = await savePreset( name, config );
 			setPresets( r.presets || { ...presets, [ name ]: config } );
 			setActivePreset( name );
-			await saveConfig( config );
+			await saveConfig( { ...config, preset: name } );
 		} catch ( e ) {
 			window.alert( e.message );
 		} finally {
@@ -168,7 +171,8 @@ function Studio( { onClose } ) {
 		}
 	}, [ panel, studioValues, activePreset, presets ] );
 
-	// Load a preset: apply its panel + studio on top of the defaults.
+	// Load a preset: apply its panel + studio on top of the defaults. Also
+	// persist it as the last-used state so reopening restores this preset.
 	const onSelectPreset = useCallback( ( name ) => {
 		setActivePreset( name );
 		const p = presets[ name ];
@@ -177,6 +181,7 @@ function Studio( { onClose } ) {
 		}
 		setPanel( ( prev ) => ( { ...DEFAULT_PANEL, ...p.panel, glbUrl: p.panel?.glbUrl || prev.glbUrl } ) );
 		setStudio( { ...DEFAULT_STUDIO, ...( p.studio || {} ) } );
+		saveConfig( { ...p, preset: name } ).catch( () => {} );
 	}, [ presets, setStudio ] );
 
 	// Reset = revert LIVE state to defaults only (keeps the chosen device/HDRI).
