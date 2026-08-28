@@ -17,7 +17,7 @@ const TABLE_SCALE = 0.005; // table GLB is ~200× the device's scale
  * + table height; everything else (the Leva values `ctrl`, screenRotate,
  * presetReady) comes from the app so all settings can be saved/loaded centrally.
  */
-export default function Scene( { glbUrl, hdriUrl, showBg, studio, showTable, imageUrl, screenImg, ctrl, screenRotate, presetReady, resetKey, exportMode = false } ) {
+export default function Scene( { glbUrl, hdriUrl, showBg, studio, showTable, imageUrl, screenImg, ctrl, screenRotate, presetReady, resetKey, savedCamera = null, exportMode = false } ) {
 	const [ rawTableTop, setTableTop ] = useState( 0 );
 	const tableTop = showTable ? rawTableTop : 0;
 	const [ deviceFrame, setDeviceFrame ] = useState( { radius: 1, center: [ 0, 0.5, 0 ], url: '' } );
@@ -55,6 +55,7 @@ export default function Scene( { glbUrl, hdriUrl, showBg, studio, showTable, ima
 				ready={ deviceFrame.url !== '' }
 				frameKey={ showTable ? 'table' : 'no-table' }
 				resetKey={ resetKey }
+				savedCamera={ savedCamera }
 			/>
 
 			{ /* Hidden until this device's preset has applied — no flash at the

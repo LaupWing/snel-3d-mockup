@@ -9,7 +9,7 @@ import { DEFAULT_CAMERA } from '../config/config';
  * NOT re-frame on a device switch — those stay in the fixed frame via their
  * preset offset/scale. `cameraY` nudges it (a vertical pedestal).
  */
-export default function CameraRig( { target, radius, cameraY, ready, frameKey, resetKey = 0 } ) {
+export default function CameraRig( { target, radius, cameraY, ready, frameKey, resetKey = 0, savedCamera = null } ) {
 	const camera = useThree( ( s ) => s.camera );
 	const controls = useThree( ( s ) => s.controls );
 	const prevKey = useRef( null );
@@ -28,8 +28,18 @@ export default function CameraRig( { target, radius, cameraY, ready, frameKey, r
 		// Default head-on direction on first frame OR on a Reset; otherwise keep
 		// the current orbit (e.g. just a table toggle).
 		const useDefault = prevKey.current === null || resetChanged;
+		const firstFrame = prevKey.current === null;
 		prevKey.current = frameKey;
 		prevReset.current = resetKey;
+		// First frame with a saved orbit (mouse rotate/zoom): restore it verbatim
+		// instead of computing the default framing.
+		if ( firstFrame && ! resetChanged && savedCamera?.position && savedCamera?.target ) {
+			camera.position.set( ...savedCamera.position );
+			controls.target.set( ...savedCamera.target );
+			controls.update();
+			appliedY.current = cameraY;
+			return;
+		}
 		const dir = useDefault
 			? new THREE.Vector3( ...DEFAULT_CAMERA )
 			: camera.position.clone().sub( controls.target );

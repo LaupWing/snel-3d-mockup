@@ -2,14 +2,14 @@
 /**
  * Plugin Name:       Snel 3D Mockup
  * Description:       3D device-mockup studio (MacBook / iMac / iPhone) voor elk post type: featured image op een 3D device, posen, belichten en als PNG naar de media library exporteren.
- * Version:           1.1.0
+ * Version:           1.2.0
  * Author:            Snelstack
  * Text Domain:       snel-mockup
  */
 
 if (! defined('ABSPATH')) exit;
 
-define('SNEL_MOCKUP_VERSION', '1.1.0');
+define('SNEL_MOCKUP_VERSION', '1.2.0');
 define('SNEL_MOCKUP_DIR', plugin_dir_path(__FILE__));
 define('SNEL_MOCKUP_URL', plugin_dir_url(__FILE__));
 

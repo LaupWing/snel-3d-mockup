@@ -12,6 +12,7 @@ import { useStudioControls } from '../controls/useStudioControls';
 import LeftPanel from '../controls/LeftPanel';
 import Scene from '../scene/Scene';
 import Capturer from '../scene/Capturer';
+import CameraSync from '../scene/CameraSync';
 
 // STABLE identity: an inline [1,2] is a new array every render, and r3f
 // re-applies the dpr prop whenever it changes — which stomped the temporary
@@ -65,6 +66,13 @@ function Studio( { onClose } ) {
 	const captureRef = useRef( null );
 	const registerCapture = useCallback( ( fn ) => {
 		captureRef.current = fn;
+	}, [] );
+
+	// CameraSync registers { get, set } for the orbit camera, so the mouse
+	// rotate/zoom can be saved with presets and restored on load.
+	const cameraApiRef = useRef( null );
+	const registerCameraSync = useCallback( ( api ) => {
+		cameraApiRef.current = api;
 	}, [] );
 
 	// Re-render the scene at export resolution (~2560px), grab the frame,
@@ -159,7 +167,7 @@ function Studio( { onClose } ) {
 		}
 		setSaving( true );
 		try {
-			const config = { panel, studio: studioValues };
+			const config = { panel, studio: studioValues, camera: cameraApiRef.current?.get() ?? null };
 			const r = await savePreset( name, config );
 			setPresets( r.presets || { ...presets, [ name ]: config } );
 			setActivePreset( name );
@@ -181,6 +189,7 @@ function Studio( { onClose } ) {
 		}
 		setPanel( ( prev ) => ( { ...DEFAULT_PANEL, ...p.panel, glbUrl: p.panel?.glbUrl || prev.glbUrl } ) );
 		setStudio( { ...DEFAULT_STUDIO, ...( p.studio || {} ) } );
+		cameraApiRef.current?.set( p.camera );
 		saveConfig( { ...p, preset: name } ).catch( () => {} );
 	}, [ presets, setStudio ] );
 
@@ -303,9 +312,11 @@ function Studio( { onClose } ) {
 									screenRotate={ screenRotate }
 									presetReady={ presetUrl === panel.glbUrl }
 									resetKey={ resetKey }
+									savedCamera={ SAVED_CONFIG?.camera ?? null }
 								/>
 							</Suspense>
 							<Capturer onReady={ registerCapture } />
+							<CameraSync onReady={ registerCameraSync } />
 						</Canvas>
 					</div>
 				</main>
